@@ -6,8 +6,9 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
+  NativeEventEmitter,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -22,6 +23,25 @@ import Everlink from './Everlink';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    const eventEmitter = new NativeEventEmitter(Everlink);
+    const onAudioCodeReceivedListener = eventEmitter.addListener('onAudioCodeReceived', (token) => {
+      console.log(token);
+    });
+    const onEverLinkErrorListener = eventEmitter.addListener('onEverLinkError', (error) => {
+      console.log(error);
+    });
+    const onMyTokenGeneratedListener = eventEmitter.addListener('onMyTokenGenerated', (res) => {
+      console.log(res);
+    });
+
+    return () => {
+      onAudioCodeReceivedListener.remove();
+      onEverLinkErrorListener.remove();
+      onMyTokenGeneratedListener.remove();
+    }
+  })
 
   const startListening = (isOffline) => {
     Everlink.startListening(isOffline);
