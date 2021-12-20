@@ -1,7 +1,10 @@
 package com.rneverlinksample;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.everlink.broadcast.util.Everlink;
 import com.facebook.react.bridge.Arguments;
@@ -21,6 +24,7 @@ import java.util.HashMap;
 
 public class EverlinkModule extends ReactContextBaseJavaModule {
 
+    private static final int REQUEST_MICROPHONE = 8000;
     private Everlink EverLinkConnect;
 
     EverlinkModule(ReactApplicationContext context) {
@@ -36,6 +40,13 @@ public class EverlinkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void initialize(String appIDKey) {
+        //check permissions
+        if (ContextCompat.checkSelfPermission(getReactApplicationContext(), android.Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions( getCurrentActivity(), new String[] {
+                    android.Manifest.permission.RECORD_AUDIO  }, REQUEST_MICROPHONE);
+        }
+
         EverLinkConnect = new Everlink(getReactApplicationContext(), getCurrentActivity(), appIDKey);
         EverLinkConnect.setAudioListener(new Everlink.audioListener() {
 

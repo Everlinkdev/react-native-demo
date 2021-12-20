@@ -45,6 +45,10 @@ const App = () => {
   const [tokens, setTokens] = useState('');
 
   useEffect(() => {
+    Everlink.initialize('upworkDemoKey11');
+  }, []);
+
+  useEffect(() => {
     const eventEmitter = new NativeEventEmitter(Everlink);
     const onAudioCodeReceivedListener = eventEmitter.addListener('onAudioCodeReceived', (token) => {
       console.log(token);
@@ -64,13 +68,14 @@ const App = () => {
       onEverLinkErrorListener.remove();
       onMyTokenGeneratedListener.remove();
     }
-  })
+  }, []);
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView keyboardShouldPersistTaps="handled">
         <View style={styles.container}>
+          {/* Show status */}
           <View style={{marginBottom: 16}}>
             <View>
               <Text style={{fontWeight: 'bold'}}>onAudioCodeReceived: </Text>
@@ -89,6 +94,7 @@ const App = () => {
 
           <View style={styles.divider} />
 
+          {/* Detect Code */}
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <CheckBox
               value={isOffline}
@@ -105,6 +111,7 @@ const App = () => {
 
           <View style={styles.divider} />
 
+          {/* Send Code */}
           <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 16}}>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
               <Text>Volume: </Text>
@@ -146,6 +153,7 @@ const App = () => {
 
           <View style={styles.divider} />
 
+          {/* Create token */}
           <TouchableOpacity style={{marginBottom: 8}} onPress={() => setDatepickerVisible(true)}>
             <Text>{moment(date).format('YYYY-MM-DD')}</Text>
           </TouchableOpacity>
@@ -155,6 +163,7 @@ const App = () => {
 
           <View style={styles.divider} />
 
+          {/* Downloading Tokens */}
           <TextInput
             style={{height: 120, borderWidth: 1, marginBottom: 12}}
             value={tokens}
