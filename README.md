@@ -19,6 +19,21 @@
     }
     ```
 
+- Edit `android/app/build.gradle` to look like this
+
+    ```diff
+    dependencies {
+        implementation fileTree(dir: "libs", include: ["*.jar"])
+        //noinspection GradleDynamicVersion
+        implementation "com.facebook.react:react-native:+"  // From node_modules
+
+        implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    +   implementation 'com.everlink:broadcast:2.0.0'
+    +   implementation 'org.apache.commons:commons-math3:3.6.1'
+        ...
+    }
+    ```
+
 - Edit `android/app/src/main/AndroidManifest.xml` to look like this
 
     ```diff
