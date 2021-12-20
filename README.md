@@ -59,7 +59,8 @@ Coming soon
 
 - Copy `Everlink.js` file
 
-- ```js
+- 
+    ```js
     import Everlink from './Everlink';
 
     const App = () => {
@@ -230,4 +231,4 @@ Coming soon
             </SafeAreaView>
         );
     };
-```
+    ```
