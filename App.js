@@ -18,18 +18,28 @@ import {
   View,
 } from 'react-native';
 
+import Everlink from './Everlink';
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const startListening = (isOffline) => {
+    Everlink.startListening(isOffline);
+  }
+
+  const stopListening = () => {
+    Everlink.stopListening();
+  }
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView>
         <View style={styles.container}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => startListening(true)}>
             <Text style={styles.buttonText}>startListening</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={stopListening}>
             <Text style={styles.buttonText}>stopListening</Text>
           </TouchableOpacity>
         </View>
