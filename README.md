@@ -101,15 +101,12 @@ Coming soon
         const eventEmitter = new NativeEventEmitter(Everlink);
         const onAudioCodeReceivedListener = eventEmitter.addListener('onAudioCodeReceived', (token) => {
             console.log(token);
-            setAudioCode(token);
         });
         const onEverLinkErrorListener = eventEmitter.addListener('onEverLinkError', (error) => {
             console.log(error);
-            setEverlinkError(error);
         });
         const onMyTokenGeneratedListener = eventEmitter.addListener('onMyTokenGenerated', (res) => {
             console.log(res);
-            setMyToken(res);
         });
 
         return () => {
