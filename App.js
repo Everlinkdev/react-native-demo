@@ -125,7 +125,7 @@ const App = () => {
               <Text>useLoudspeaker</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.button} onPress={() => Everlink.playVolume(volume, useLoudspeaker)}>
+          <TouchableOpacity style={styles.button} onPress={() => Everlink.playVolume(parseFloat(volume), useLoudspeaker)}>
             <Text style={styles.buttonText}>playVolume</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => Everlink.startEmitting()}>
