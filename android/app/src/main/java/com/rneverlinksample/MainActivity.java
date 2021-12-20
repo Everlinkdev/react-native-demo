@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 
 import com.everlink.broadcast.util.Everlink;
 import com.facebook.react.ReactActivity;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 
 public class MainActivity extends ReactActivity {
 
@@ -59,5 +61,54 @@ public class MainActivity extends ReactActivity {
         Log.d("oldToken", oldToken);
       }
     });
+  }
+
+  @ReactMethod
+  public void startListening(boolean isOffline) {
+    EverLinkConnect.startListening(isOffline);
+  }
+
+  @ReactMethod
+  public void stopListening() {
+    EverLinkConnect.stopListening();
+  }
+
+  @ReactMethod
+  public void playVolume(double volume, boolean useLoudspeaker) {
+    EverLinkConnect.playVolume(volume, useLoudspeaker);
+  }
+
+  @ReactMethod
+  public void startEmitting() {
+    EverLinkConnect.startEmitting();
+  }
+
+  @ReactMethod
+  public void stopEmitting() {
+    EverLinkConnect.stopEmitting();
+  }
+
+  @ReactMethod
+  public void startEmittingToken(String token, boolean isOffline) {
+    EverLinkConnect.startEmittingToken(token, isOffline);
+  }
+
+  @ReactMethod
+  public void createNewToken(String startDate) {
+    EverLinkConnect.createNewToken(startDate);
+  }
+
+  @ReactMethod
+  public void saveSounds(ReadableArray tokensArray) {
+    String[] tokens = new String[tokensArray.size()];
+    for (int i = 0; i < tokensArray.size(); i++) {
+      tokens[i] = tokensArray.getString(i);
+    }
+    EverLinkConnect.saveSounds(tokens);
+  }
+
+  @ReactMethod
+  public void clearSounds() {
+    EverLinkConnect.clearSounds();
   }
 }
