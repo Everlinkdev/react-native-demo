@@ -114,7 +114,6 @@
 				E4573AAEDD40FFFDCDB34B76 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig */,
 				7EF35C0E0131CE57C0E9D3D7 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -496,7 +495,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.everlink.rneverlinksample;
 				PRODUCT_NAME = RNEverlinkSample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -521,7 +520,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.everlink.rneverlinksample;
 				PRODUCT_NAME = RNEverlinkSample;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
