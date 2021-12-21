@@ -99,6 +99,7 @@ const App = () => {
             <CheckBox
               value={isOffline}
               onValueChange={(newValue) => setOffline(newValue)}
+              style={{margin: 4}}
             />
             <Text>isOffline</Text>
           </View>
@@ -121,6 +122,7 @@ const App = () => {
               <CheckBox
                 value={useLoudspeaker}
                 onValueChange={(newValue) => setUseLoudspeaker(newValue)}
+                style={{margin: 4}}
               />
               <Text>useLoudspeaker</Text>
             </View>
@@ -143,6 +145,7 @@ const App = () => {
               <CheckBox
                 value={isOffline2}
                 onValueChange={(newValue) => setOffline2(newValue)}
+                style={{margin: 4}}
               />
               <Text>isOffline</Text>
             </View>
