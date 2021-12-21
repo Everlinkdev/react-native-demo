@@ -13,7 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		29E1E4475FEFEA714245580A /* libPods-RNEverlinkSample-RNEverlinkSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321638D0B85359C52EF5E7B7 /* libPods-RNEverlinkSample-RNEverlinkSampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		84E14DFE27716C250030E661 /* RCTEverlinkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E14DFD27716C250030E661 /* RCTEverlinkModule.m */; };
+		84C599302771EA19004BF510 /* EverlinkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5992F2771EA19004BF510 /* EverlinkModule.m */; };
+		84C599332771EA2A004BF510 /* EverlinkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C599322771EA2A004BF510 /* EverlinkModule.swift */; };
 		A131336285F69BE83029CA2E /* libPods-RNEverlinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52341775C5E64FE79010A63D /* libPods-RNEverlinkSample.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +42,9 @@
 		52341775C5E64FE79010A63D /* libPods-RNEverlinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNEverlinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF35C0E0131CE57C0E9D3D7 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample-RNEverlinkSampleTests/Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNEverlinkSample/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84E14DFC27716AAD0030E661 /* RCTEverlinkModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTEverlinkModule.h; sourceTree = "<group>"; };
-		84E14DFD27716C250030E661 /* RCTEverlinkModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTEverlinkModule.m; sourceTree = "<group>"; };
+		84C5992F2771EA19004BF510 /* EverlinkModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverlinkModule.m; sourceTree = "<group>"; };
+		84C599312771EA29004BF510 /* RNEverlinkSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNEverlinkSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		84C599322771EA2A004BF510 /* EverlinkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverlinkModule.swift; sourceTree = "<group>"; };
 		E4573AAEDD40FFFDCDB34B76 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample-RNEverlinkSampleTests/Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F16E83E88061F54CACFB2042 /* Pods-RNEverlinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample.debug.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample/Pods-RNEverlinkSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,8 +97,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				84E14DFC27716AAD0030E661 /* RCTEverlinkModule.h */,
-				84E14DFD27716C250030E661 /* RCTEverlinkModule.m */,
+				84C5992F2771EA19004BF510 /* EverlinkModule.m */,
+				84C599322771EA2A004BF510 /* EverlinkModule.swift */,
+				84C599312771EA29004BF510 /* RNEverlinkSample-Bridging-Header.h */,
 			);
 			name = RNEverlinkSample;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -415,9 +418,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C599332771EA2A004BF510 /* EverlinkModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				84C599302771EA19004BF510 /* EverlinkModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				84E14DFE27716C250030E661 /* RCTEverlinkModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4573AAEDD40FFFDCDB34B76 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -463,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EF35C0E0131CE57C0E9D3D7 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNEverlinkSampleTests/Info.plist;
@@ -490,6 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KLYKAG5YZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNEverlinkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -503,6 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.everlink.rneverlinksample;
 				PRODUCT_NAME = RNEverlinkSample;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNEverlinkSample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -516,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KLYKAG5YZ;
 				INFOPLIST_FILE = RNEverlinkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.everlink.rneverlinksample;
 				PRODUCT_NAME = RNEverlinkSample;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNEverlinkSample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
