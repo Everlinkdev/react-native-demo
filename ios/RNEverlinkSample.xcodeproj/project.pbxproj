@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		29E1E4475FEFEA714245580A /* libPods-RNEverlinkSample-RNEverlinkSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321638D0B85359C52EF5E7B7 /* libPods-RNEverlinkSample-RNEverlinkSampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84E14DFE27716C250030E661 /* RCTEverlinkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E14DFD27716C250030E661 /* RCTEverlinkModule.m */; };
 		A131336285F69BE83029CA2E /* libPods-RNEverlinkSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52341775C5E64FE79010A63D /* libPods-RNEverlinkSample.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		52341775C5E64FE79010A63D /* libPods-RNEverlinkSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNEverlinkSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF35C0E0131CE57C0E9D3D7 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample-RNEverlinkSampleTests/Pods-RNEverlinkSample-RNEverlinkSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNEverlinkSample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E14DFC27716AAD0030E661 /* RCTEverlinkModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTEverlinkModule.h; sourceTree = "<group>"; };
+		84E14DFD27716C250030E661 /* RCTEverlinkModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTEverlinkModule.m; sourceTree = "<group>"; };
 		E4573AAEDD40FFFDCDB34B76 /* Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample-RNEverlinkSampleTests/Pods-RNEverlinkSample-RNEverlinkSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F16E83E88061F54CACFB2042 /* Pods-RNEverlinkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNEverlinkSample.debug.xcconfig"; path = "Target Support Files/Pods-RNEverlinkSample/Pods-RNEverlinkSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				84E14DFC27716AAD0030E661 /* RCTEverlinkModule.h */,
+				84E14DFD27716C250030E661 /* RCTEverlinkModule.m */,
 			);
 			name = RNEverlinkSample;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				84E14DFE27716C250030E661 /* RCTEverlinkModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
