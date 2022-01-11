@@ -128,7 +128,7 @@
         const onAudioCodeReceivedListener = eventEmitter.addListener('onAudioCodeReceived', (token) => {
             console.log(token);
         });
-        const onEverLinkErrorListener = eventEmitter.addListener('onEverLinkError', (error) => {
+        const onEverlinkErrorListener = eventEmitter.addListener('onEverlinkError', (error) => {
             console.log(error);
         });
         const onMyTokenGeneratedListener = eventEmitter.addListener('onMyTokenGenerated', (res) => {
@@ -137,7 +137,7 @@
 
         return () => {
             onAudioCodeReceivedListener.remove();
-            onEverLinkErrorListener.remove();
+            onEverlinkErrorListener.remove();
             onMyTokenGeneratedListener.remove();
         }
     }, []);

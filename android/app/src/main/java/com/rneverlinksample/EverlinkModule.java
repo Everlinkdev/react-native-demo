@@ -8,9 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import com.everlink.broadcast.util.Everlink;
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
@@ -19,13 +17,10 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
-import java.util.HashMap;
-
 public class EverlinkModule extends ReactContextBaseJavaModule {
 
     private static final int REQUEST_MICROPHONE = 8000;
-    private Everlink EverLinkConnect;
+    private Everlink EverlinkObj;
 
     EverlinkModule(ReactApplicationContext context) {
         super(context);
@@ -57,8 +52,8 @@ public class EverlinkModule extends ReactContextBaseJavaModule {
                     android.Manifest.permission.RECORD_AUDIO  }, REQUEST_MICROPHONE);
         }
 
-        EverLinkConnect = new Everlink(getReactApplicationContext(), getCurrentActivity(), appIDKey);
-        EverLinkConnect.setAudioListener(new Everlink.audioListener() {
+        EverlinkObj = new Everlink(getReactApplicationContext(), getCurrentActivity(), appIDKey);
+        EverlinkObj.setAudioListener(new Everlink.audioListener() {
 
             @Override
             public void onAudioCodeReceived(String token) {
@@ -70,12 +65,12 @@ public class EverlinkModule extends ReactContextBaseJavaModule {
             }
 
             @Override
-            public void onEverLinkError(String error) {
+            public void onEverlinkError(String error) {
                 //return the type of error received: server response, no internet, no permissions
                 Log.d("error", error);
                 getReactApplicationContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("onEverLinkError", error);
+                        .emit("onEverlinkError", error);
             }
 
             @Override
@@ -95,37 +90,37 @@ public class EverlinkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void startListening(boolean isOffline) {
-        EverLinkConnect.startListening(isOffline);
+        EverlinkObj.startListening(isOffline);
     }
 
     @ReactMethod
     public void stopListening() {
-        EverLinkConnect.stopListening();
+        EverlinkObj.stopListening();
     }
 
     @ReactMethod
     public void playVolume(double volume, boolean useLoudspeaker) {
-        EverLinkConnect.playVolume(volume, useLoudspeaker);
+        EverlinkObj.playVolume(volume, useLoudspeaker);
     }
 
     @ReactMethod
     public void startEmitting() {
-        EverLinkConnect.startEmitting();
+        EverlinkObj.startEmitting();
     }
 
     @ReactMethod
     public void stopEmitting() {
-        EverLinkConnect.stopEmitting();
+        EverlinkObj.stopEmitting();
     }
 
     @ReactMethod
     public void startEmittingToken(String token, boolean isOffline) {
-        EverLinkConnect.startEmittingToken(token, isOffline);
+        EverlinkObj.startEmittingToken(token, isOffline);
     }
 
     @ReactMethod
     public void createNewToken(String startDate) {
-        EverLinkConnect.createNewToken(startDate);
+        EverlinkObj.createNewToken(startDate);
     }
 
     @ReactMethod
@@ -134,11 +129,11 @@ public class EverlinkModule extends ReactContextBaseJavaModule {
         for (int i = 0; i < tokensArray.size(); i++) {
             tokens[i] = tokensArray.getString(i);
         }
-        EverLinkConnect.saveSounds(tokens);
+        EverlinkObj.saveSounds(tokens);
     }
 
     @ReactMethod
     public void clearSounds() {
-        EverLinkConnect.clearSounds();
+        EverlinkObj.clearSounds();
     }
 }

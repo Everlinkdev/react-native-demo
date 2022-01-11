@@ -54,7 +54,7 @@ const App = () => {
       console.log(token);
       setAudioCode(token);
     });
-    const onEverLinkErrorListener = eventEmitter.addListener('onEverLinkError', (error) => {
+    const onEverlinkErrorListener = eventEmitter.addListener('onEverlinkError', (error) => {
       console.log(error);
       setEverlinkError(error);
     });
@@ -65,7 +65,7 @@ const App = () => {
 
     return () => {
       onAudioCodeReceivedListener.remove();
-      onEverLinkErrorListener.remove();
+      onEverlinkErrorListener.remove();
       onMyTokenGeneratedListener.remove();
     }
   }, []);
@@ -82,7 +82,7 @@ const App = () => {
               <Text style={{marginTop: 4}}>{audioCode}</Text>
             </View>
             <View>
-              <Text style={{fontWeight: 'bold'}}>onEverLinkError: </Text>
+              <Text style={{fontWeight: 'bold'}}>onEverlinkError: </Text>
               <Text style={{marginTop: 4}}>{everlinkError}</Text>
             </View>
             <View>

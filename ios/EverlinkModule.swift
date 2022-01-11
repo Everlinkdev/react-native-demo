@@ -14,7 +14,7 @@ class EverlinkModule: RCTEventEmitter, EverlinkConnectDelegate {
   var connectObj:Everlink?
   
   override func supportedEvents() -> [String]! {
-    return ["onAudioCodeReceived", "onEverLinkError", "onMyTokenGenerated"]
+    return ["onAudioCodeReceived", "onMyTokenGenerated"]
   }
   
   override static func requiresMainQueueSetup() -> Bool {
