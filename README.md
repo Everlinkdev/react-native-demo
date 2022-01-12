@@ -87,11 +87,15 @@
 
 - Add `ios/EverlinkModule.m` file to your iOS project. In the popup, please select your target and be sure "Copy items if needed" is checked.
 
-    ![Scheme](images/Screenshot at Dec 21 23-25-30.png)
+    <p>
+    <img src="images/Screenshot at Dec 21 23-25-30.png" width="100%"  />
+    </p>
 
 - Add `ios/EverlinkModule.swift` file to your iOS project. In the popup, please select your target and be sure "Copy items if needed" is checked. You should be prompted to choose if you want to configure an Objective-C Bridging Header. Select “Create Bridging Header”.
 
-    ![Scheme](images/Screenshot at Dec 21 23-27-40.png)
+    <p>
+    <img src="images/Screenshot at Dec 21 23-27-40.png" width="100%"  />
+    </p>
 
 - Edit `YourProject-Bridging-Header.h` to look like this
 
