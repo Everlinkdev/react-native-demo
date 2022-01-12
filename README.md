@@ -30,7 +30,7 @@
         implementation "com.facebook.react:react-native:+"  // From node_modules
 
         implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    +   implementation 'com.everlink:broadcast:2.0.0'
+    +   implementation 'com.everlink:broadcast:2.0.1'
     +   implementation 'org.apache.commons:commons-math3:3.6.1'
         ...
     }
